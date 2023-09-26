@@ -1,2 +1,5 @@
 rootProject.name = 'greetgoCrudTelephony'
 
+includeBuild 'mongoDbCrud'
+includeBuild 'postgreSqlCrud'
+
