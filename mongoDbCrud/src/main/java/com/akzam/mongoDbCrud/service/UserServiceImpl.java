@@ -103,14 +103,18 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public User getUserByPhoneNumber(String phoneNumber) {
         return userRepository.findByPhoneNumber(phoneNumber)
-                .orElseThrow(() -> new UserNotFoundException("User with " + phoneNumber + " does not exists"));
+                .orElseThrow(() ->
+                        new UserNotFoundException(
+                            "User with phone number " + phoneNumber + " does not exists"
+                        )
+                );
     }
 
     private void throwIfUserExists(String phoneNumber) {
         userRepository.findByPhoneNumber(phoneNumber)
                 .ifPresent(foundUser -> {
                     throw new UserAlreadyExistsException(
-                            "User with " + foundUser.getPhoneNumber() + " already exists"
+                            "User with phone number " + foundUser.getPhoneNumber() + " already exists"
                     );
                 });
     }
