@@ -26,6 +26,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+	compileOnly "io.mongock:mongock-springboot-v3:$mongockVersion"
+	implementation "io.mongock:mongock-bom:$mongockVersion"
+	implementation "io.mongock:mongodb-springdata-v4-driver:$mongockVersion"
+
 	compileOnly "org.projectlombok:lombok:$projectLombokVersion"
 	annotationProcessor "org.projectlombok:lombok:$projectLombokVersion"
 

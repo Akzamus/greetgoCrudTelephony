@@ -7,6 +7,11 @@ spring:
       database: admin
       port: 27018
       host: localhost
+      auto-index-creation: false
+
+mongock:
+  migration-scan-package: com.akzam.mongoDbCrud.config.migration
+  enabled: true
 
 server:
   port: 8080

@@ -1,6 +1,7 @@
 package com.akzam.mongoDbCrud.document;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 @Document(collection = "users")
 public class User {
 
@@ -32,5 +34,12 @@ public class User {
     @CreatedDate
     @Field(name = "creationDate")
     private LocalDateTime creationDate;
+
+    public User(String name, Integer yearOfBirth, String phoneNumber, String secondPhoneNumber) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.secondPhoneNumber = secondPhoneNumber;
+    }
 
 }
