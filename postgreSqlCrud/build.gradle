@@ -35,9 +35,14 @@ dependencies {
     implementation "org.mapstruct:mapstruct:$mapStructVersion"
     annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructVersion"
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.testng:testng:$testNgVersion"
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+test {
+    useTestNG(){
+        suites 'src/test/resources/testng-build.xml'
+    }
 }
