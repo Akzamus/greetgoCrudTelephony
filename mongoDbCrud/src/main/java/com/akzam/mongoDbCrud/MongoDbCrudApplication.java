@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @EnableMongock
-@SpringBootApplication
 @EnableMongoAuditing
+@SpringBootApplication
 public class MongoDbCrudApplication {
 
 	public static void main(String[] args) {

@@ -1,8 +1,9 @@
-package com.akzam.mongoDbCrud.advice;
+package com.akzam.postgreSqlCrud.advice;
 
-import com.akzam.mongoDbCrud.dto.apiException.ApiExceptionResponseDto;
-import com.akzam.mongoDbCrud.dto.apiException.ApiValidationExceptionResponseDto;
-import com.akzam.mongoDbCrud.exception.ApiExceptionResponseFactory;
+
+import com.akzam.postgreSqlCrud.dto.apiException.ApiExceptionResponseDto;
+import com.akzam.postgreSqlCrud.dto.apiException.ApiValidationExceptionResponseDto;
+import com.akzam.postgreSqlCrud.exception.ApiExceptionResponseFactory;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
