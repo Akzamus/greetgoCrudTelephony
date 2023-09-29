@@ -18,24 +18,24 @@ docker-compose up
 
 Module 1 (MongoDB)
 
-Spring Boot: A framework for creating web applications.
-Spring Boot Data MongoDB: For working with the MongoDB database.
-Spring Boot Validation: For data validation.
-Lombok: To simplify the code.
-MapStruct: For mapping between entities.
-TestNG: For unit testing.
-MongoDB: For data storage.
+    Spring Boot: A framework for creating web applications.
+    Spring Boot Data MongoDB: For working with the MongoDB database.
+    Spring Boot Validation: For data validation.
+    Lombok: To simplify the code.
+    MapStruct: For mapping between entities.
+    TestNG: For unit testing.
+    MongoDB: For data storage.
 
 Module 2 (PostgreSQL)
 
-Spring Boot: A framework for creating web applications.
-Spring Boot Data JPA: To work with the database and manage entities.
-Spring Boot Validation: For data validation.
-Flyway: For PostgreSQL database migrations.
-PostgreSQL: For data storage.
-Lombok: To simplify the code.
-MapStruct: For mapping between entities.
-TestNG: For unit testing.
+    Spring Boot: A framework for creating web applications.
+    Spring Boot Data JPA: To work with the database and manage entities.
+    Spring Boot Validation: For data validation.
+    Flyway: For PostgreSQL database migrations.
+    PostgreSQL: For data storage.
+    Lombok: To simplify the code.
+    MapStruct: For mapping between entities.
+    TestNG: For unit testing.
 
 ## Using the Postman query collection
 
