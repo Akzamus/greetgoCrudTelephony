@@ -1,0 +1,814 @@
+{
+	"info": {
+		"_postman_id": "6f627765-80dc-4abf-bb50-162245840f95",
+		"name": "GreetgoCrudTelephony",
+		"description": "| **Format id in MongoDB** | 65162ad4adf7df0729148179 |\n| --- | --- |\n| **Format id in PostgreSQL** | ce285537-a0b8-468f-b090-a9336b7f1f0e |\n| **Unique fields** | phoneNumber, id |\n\n**INFO**\n\n- The requests that are given as an example do not specify the correct ids, since they are generated automatically and they are different every migration.\n    \n- Some requests contain examples of possible responses to both correct requests and not.\n    \n- The Rest API checks all fields and handles incorrect requests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21642772",
+		"_collection_link": "https://speeding-equinox-936930.postman.co/workspace/Akzam-Workspace~bb2a80b0-ec85-4a46-8f54-e260dfe8dea9/collection/21642772-6f627765-80dc-4abf-bb50-162245840f95?action=share&source=collection_link&creator=21642772"
+	},
+	"item": [
+		{
+			"name": "UserControllerMongoDb",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"offset\": \"2\",\r\n    \"limit\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"offset\": \"2\",\r\n    \"limit\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:08:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"65162f1fc7d59539135cd722\",\n        \"name\": \"Bob Johnson\",\n        \"yearOfBirth\": 1978,\n        \"phoneNumber\": \"+7-(345)-678-90-12\",\n        \"secondPhoneNumber\": \"+7-(765)-432-10-98\",\n        \"creationDate\": \"2023-09-29 01:57:51\"\n    },\n    {\n        \"id\": \"65162f1fc7d59539135cd723\",\n        \"name\": \"Eve Adams\",\n        \"yearOfBirth\": 1982,\n        \"phoneNumber\": \"+7-(456)-789-01-23\",\n        \"secondPhoneNumber\": \"+7-(654)-321-09-87\",\n        \"creationDate\": \"2023-09-29 01:57:51\"\n    },\n    {\n        \"id\": \"65162f1fc7d59539135cd724\",\n        \"name\": \"Charlie Brown\",\n        \"yearOfBirth\": 1995,\n        \"phoneNumber\": \"+7-(567)-890-12-34\",\n        \"secondPhoneNumber\": \"+7-(543)-210-98-76\",\n        \"creationDate\": \"2023-09-29 01:57:51\"\n    },\n    {\n        \"id\": \"65162f1fc7d59539135cd725\",\n        \"name\": \"Grace Davis\",\n        \"yearOfBirth\": 1989,\n        \"phoneNumber\": \"+7-(678)-901-23-45\",\n        \"secondPhoneNumber\": \"+7-(432)-109-87-65\",\n        \"creationDate\": \"2023-09-29 01:57:51\"\n    },\n    {\n        \"id\": \"65162f1fc7d59539135cd726\",\n        \"name\": \"David Lee\",\n        \"yearOfBirth\": 1970,\n        \"phoneNumber\": \"+7-(789)-012-34-56\",\n        \"secondPhoneNumber\": \"+7-(321)-098-76-54\",\n        \"creationDate\": \"2023-09-29 01:57:51\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/id/65162f1fc7d59539135cd722",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"id",
+								"65162f1fc7d59539135cd722"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "NOT_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/users/id/65162f1fc7d59539135cd722",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"id",
+										"65162f1fc7d59539135cd722"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:31:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 404,\n    \"httpStatus\": \"NOT_FOUND\",\n    \"timestamp\": \"2023-09-29T02:31:31.348887871Z\",\n    \"errorMessage\": \"User with ID 65162f1fc7d59539135cd722 does not exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserByPhoneNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/phone-number/+7-(777)-777-77-77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"phone-number",
+								"+7-(777)-777-77-77"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BAD_REQUEST",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/users/phone-number/+7 (777) 777-77-77",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"phone-number",
+										"+7 (777) 777-77-77"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:32:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 400,\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2023-09-29T02:32:02.686265638Z\",\n    \"errorFields\": {\n        \"phoneNumber\": \"Phone Number must be in the format +7-(XXX)-XXX-XX-XX\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Akzam Khamitov\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(567)-890-12-34\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CONFLICT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Akzam Khamitov\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(567)-890-12-34\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:33:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 409,\n    \"httpStatus\": \"CONFLICT\",\n    \"timestamp\": \"2023-09-29T02:33:20.772357521Z\",\n    \"errorMessage\": \"User with phone number +7-(567)-890-12-34 already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(777)-777-77-77\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/651342f79e716d00f38cc478",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"651342f79e716d00f38cc478"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/id/6513446c9e716d00f38cc479",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"id",
+								"6513446c9e716d00f38cc479"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserByPhoneNumber",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/phone-number/+7-(777)-777-77-79",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"phone-number",
+								"+7-(777)-777-77-79"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserControllerPostgreSql",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"offset\": \"2\",\r\n    \"limit\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"offset\": \"2\",\r\n    \"limit\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:30:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"ce285537-a0b8-468f-b090-a9336b7f1f0e\",\n        \"name\": \"Bob Johnson\",\n        \"yearOfBirth\": 1978,\n        \"phoneNumber\": \"+7-(345)-678-90-12\",\n        \"secondPhoneNumber\": \"+7-(765)-432-10-98\",\n        \"creationDate\": \"2023-09-29 02:07:49\"\n    },\n    {\n        \"id\": \"a14edcd1-6739-4ad8-9b39-7a2de66804df\",\n        \"name\": \"Eve Adams\",\n        \"yearOfBirth\": 1982,\n        \"phoneNumber\": \"+7-(456)-789-01-23\",\n        \"secondPhoneNumber\": \"+7-(654)-321-09-87\",\n        \"creationDate\": \"2023-09-29 02:07:49\"\n    },\n    {\n        \"id\": \"94d68a66-b9cc-40fa-becd-9f73ba337b36\",\n        \"name\": \"Charlie Brown\",\n        \"yearOfBirth\": 1995,\n        \"phoneNumber\": \"+7-(567)-890-12-34\",\n        \"secondPhoneNumber\": \"+7-(543)-210-98-76\",\n        \"creationDate\": \"2023-09-29 02:07:49\"\n    },\n    {\n        \"id\": \"6263ee42-a71e-4a38-a69e-267f7fee8f37\",\n        \"name\": \"Grace Davis\",\n        \"yearOfBirth\": 1989,\n        \"phoneNumber\": \"+7-(678)-901-23-45\",\n        \"secondPhoneNumber\": \"+7-(432)-109-87-65\",\n        \"creationDate\": \"2023-09-29 02:07:49\"\n    },\n    {\n        \"id\": \"e29c0c35-c37c-4174-a303-f38870f47cae\",\n        \"name\": \"David Lee\",\n        \"yearOfBirth\": 1970,\n        \"phoneNumber\": \"+7-(789)-012-34-56\",\n        \"secondPhoneNumber\": \"+7-(321)-098-76-54\",\n        \"creationDate\": \"2023-09-29 02:07:49\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users/id/a571de5f-3a8e-40b5-98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"id",
+								"a571de5f-3a8e-40b5-98"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "NOT_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1/users/id/a571de5f-3a8e-40b5-98ef-f4d34d9af139",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"id",
+										"a571de5f-3a8e-40b5-98ef-f4d34d9af139"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:13:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 404,\n    \"httpStatus\": \"NOT_FOUND\",\n    \"timestamp\": \"2023-09-29T02:13:02.900841033Z\",\n    \"errorMessage\": \"User with ID 1a46c3f6-e9f8-4fdd-8c2d-b625118cf3a2 does not exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserByPhoneNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users/phone-number/+7-(123)-456-78-90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"phone-number",
+								"+7-(123)-456-78-90"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BAD_REQUEST",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1/users/phone-number/+7-(123)-",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"phone-number",
+										"+7-(123)-"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:29:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 400,\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2023-09-29T02:29:09.279038374Z\",\n    \"errorFields\": {\n        \"phoneNumber\": \"Phone Number must be in the format +7-(XXX)-XXX-XX-XX\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(777)-777-77-77\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CONFLICT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(123)-456-78-90\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 02:30:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 409,\n    \"httpStatus\": \"CONFLICT\",\n    \"timestamp\": \"2023-09-29T02:30:15.612081539Z\",\n    \"errorMessage\": \"User with phone number +7-(123)-456-78-90 already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"yearOfBirth\": 1990,\r\n    \"phoneNumber\": \"+7-(777)-777-77-77\",\r\n    \"secondPhoneNumber\": \"+7-(777)-777-77-78\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users/1a46c3f6-e9f8-4fdd-8c2d-b625118cf3a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1a46c3f6-e9f8-4fdd-8c2d-b625118cf3a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users/id/1a46c3f6-e9f8-4fdd-8c2d-b625118cf3a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"id",
+								"1a46c3f6-e9f8-4fdd-8c2d-b625118cf3a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserByPhoneNumber",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/users/phone-number/+7-(777)-777-77-77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"phone-number",
+								"+7-(777)-777-77-77"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
