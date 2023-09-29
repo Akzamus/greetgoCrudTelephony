@@ -4,26 +4,69 @@ services:
   mongodb:
     image: mongo:6.0
     container_name: mongodb
-    ports:
-      - "27018:27017"
+    expose:
+      - "27017"
     volumes:
       - mongodb-data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    networks:
+      - mongodb-network
 
   postgresql:
-    image: postgres:16.0
+    image: postgres:16-alpine
     container_name: postgresql
-    ports:
-      - "5433:5432"
+    expose:
+      - "5432"
     volumes:
       - postgresql-data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - postgresql-network
+
+  mongodb-crud-app:
+    container_name: mongo-crud-app
+    build:
+      context: ./mongoDbCrud
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      MONGODB_AUTH_DATABASE: ${MONGODB_AUTH_DATABASE}
+      MONGODB_USERNAME: ${MONGODB_USERNAME}
+      MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+      MONGODB_DATABASE: ${MONGODB_DATABASE}
+      MONGODB_PORT: ${MONGODB_PORT}
+      MONGODB_HOST: ${MONGODB_HOST}
+    networks:
+      - mongodb-network
+
+  postgres-crud-app:
+    container_name: postgres-crud-app
+    build:
+      context: ./postgreSqlCrud
+    ports:
+      - "9090:8080"
+    depends_on:
+      - postgresql
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_URL: ${POSTGRES_URL}
+    networks:
+      - postgresql-network
+
+
+networks:
+  mongodb-network:
+    driver: bridge
+  postgresql-network:
+    driver: bridge
 
 volumes:
   mongodb-data:

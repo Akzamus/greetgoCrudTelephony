@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -25,6 +26,7 @@ public class User {
     @Field(name = "yearOfBirth")
     private Integer yearOfBirth;
 
+    @Indexed(unique = true)
     @Field(name = "phoneNumber")
     private String phoneNumber;
 

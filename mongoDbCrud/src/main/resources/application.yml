@@ -1,17 +1,9 @@
 spring:
   data:
     mongodb:
-      authentication-database: admin
-      username: mongo
-      password: mongo
-      database: admin
-      port: 27018
-      host: localhost
-      auto-index-creation: false
-
-mongock:
-  migration-scan-package: com.akzam.mongoDbCrud.config.migration
-  enabled: true
-
-server:
-  port: 8080
+      authentication-database: ${MONGODB_AUTH_DATABASE}
+      username: ${MONGODB_USERNAME}
+      password: ${MONGODB_PASSWORD}
+      database: ${MONGODB_DATABASE}
+      port: ${MONGODB_PORT}
+      host: ${MONGODB_HOST}
